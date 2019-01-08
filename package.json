@@ -1,0 +1,24 @@
+{
+  "name": "abc-cdk-dynamo",
+  "version": "0.1.0",
+  "bin": {
+    "abc-cdk-dynamo": "bin/abc-cdk-dynamo.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/node": "^8.9.4",
+    "typescript": "^3.1.2",
+    "aws-cdk": "^0.21.0"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-dynamodb": "^0.21.0",
+    "@aws-cdk/aws-lambda": "^0.21.0",
+    "@aws-cdk/aws-lambda-event-sources": "^0.21.0",
+    "@aws-cdk/aws-sqs": "^0.21.0",
+    "@aws-cdk/cdk": "^0.21.0"
+  }
+}

@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const cdk = require("@aws-cdk/cdk");
+const sqs = require("@aws-cdk/aws-sqs");
+const queue_recorder_1 = require("../lib/queue-recorder");
+class AbcCdkDynamoStack extends cdk.Stack {
+    constructor(scope, id, props) {
+        super(scope, id, props);
+        const queue = new sqs.Queue(this, 'HelloQueue');
+        new queue_recorder_1.QueueRecorder(this, 'QueueRecorder', {
+            inputQueue: queue
+        });
+    }
+}
+const app = new cdk.App();
+new AbcCdkDynamoStack(app, 'AbcCdkDynamoStack');
+app.run();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYWJjLWNkay1keW5hbW8uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJhYmMtY2RrLWR5bmFtby50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFDQSxvQ0FBcUM7QUFDckMsd0NBQXlDO0FBQ3pDLDBEQUFzRDtBQUV0RCxNQUFNLGlCQUFtQixTQUFRLEdBQUcsQ0FBQyxLQUFLO0lBQUMsWUFBWSxLQUFjLEVBQUUsRUFBVSxFQUFFLEtBQXNCO1FBRXJHLEtBQUssQ0FBQyxLQUFLLEVBQUUsRUFBRSxFQUFFLEtBQUssQ0FBQyxDQUFDO1FBQ3hCLE1BQU0sS0FBSyxHQUFHLElBQUksR0FBRyxDQUFDLEtBQUssQ0FBQyxJQUFJLEVBQUUsWUFBWSxDQUFDLENBQUM7UUFDaEQsSUFBSSw4QkFBYSxDQUFDLElBQUksRUFBRSxlQUFlLEVBQUU7WUFDckMsVUFBVSxFQUFFLEtBQUs7U0FDcEIsQ0FBQyxDQUFDO0lBRVAsQ0FBQztDQUFDO0FBRUYsTUFBTSxHQUFHLEdBQUcsSUFBSSxHQUFHLENBQUMsR0FBRyxFQUFFLENBQUM7QUFDMUIsSUFBSSxpQkFBaUIsQ0FBQyxHQUFHLEVBQUUsbUJBQW1CLENBQUMsQ0FBQztBQUNoRCxHQUFHLENBQUMsR0FBRyxFQUFFLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIjIS91c3IvYmluL2VudiBub2RlXG5pbXBvcnQgY2RrID0gcmVxdWlyZSgnQGF3cy1jZGsvY2RrJyk7XG5pbXBvcnQgc3FzID0gcmVxdWlyZSgnQGF3cy1jZGsvYXdzLXNxcycpO1xuaW1wb3J0IHsgUXVldWVSZWNvcmRlciB9IGZyb20gJy4uL2xpYi9xdWV1ZS1yZWNvcmRlcic7XG5cbmNsYXNzIEFiY0Nka0R5bmFtb1N0YWNrICBleHRlbmRzIGNkay5TdGFja3tjb25zdHJ1Y3RvcihzY29wZTogY2RrLkFwcCwgaWQ6IHN0cmluZywgcHJvcHM/OiBjZGsuU3RhY2tQcm9wcylcbntcbiAgICBzdXBlcihzY29wZSwgaWQsIHByb3BzKTtcbiAgICBjb25zdCBxdWV1ZSA9IG5ldyBzcXMuUXVldWUodGhpcywgJ0hlbGxvUXVldWUnKTtcbiAgICBuZXcgUXVldWVSZWNvcmRlcih0aGlzLCAnUXVldWVSZWNvcmRlcicsIHtcbiAgICAgICAgaW5wdXRRdWV1ZTogcXVldWVcbiAgICB9KTtcblxufX1cblxuY29uc3QgYXBwID0gbmV3IGNkay5BcHAoKTtcbm5ldyBBYmNDZGtEeW5hbW9TdGFjayhhcHAsICdBYmNDZGtEeW5hbW9TdGFjaycpO1xuYXBwLnJ1bigpO1xuIl19
